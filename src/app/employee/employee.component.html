@@ -22,17 +22,27 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>170210</td>
-                <td>Nahid</td>
-                <td>Prawez</td>
-                <td>30000 INR</td>
-                <td>02- 08- 1999</td>
-                <td>nahid@fokatguru.in</td>
-                <td><button>Modify</button></td>
+            <tr *ngIf="!showEdit">
+                <td>{{employee.employeeID}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.salary}}</td>
+                <td>{{employee.dob}}</td>
+                <td>{{employee.email}}</td>
+                <td><button (click) = "EditEmp()">{{employee.action}}</button></td>
             </tr>
+            <tr *ngIf="showEdit">
+                <td><input [(ngModel)]="employee.employeeID"></td>
+                <td><input [(ngModel)]="employee.firstName"></td>
+                <td><input [(ngModel)]="employee.lastName"></td>
+                <td><input [(ngModel)]="employee.salary"></td>
+                <td><input [(ngModel)]="employee.dob" type="date"></td>
+                <td><input [(ngModel)]="employee.email"></td>
+                <td>
+                  <button (click)="UpdateEmp()">Update</button>
+                </td>
+              </tr>
         </tbody>
     </table>
 </div>
-
 
