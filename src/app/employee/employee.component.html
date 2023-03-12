@@ -68,8 +68,9 @@
                 <td>{{employee.employeeID}}</td>
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
-                <td>{{employee.salary}}</td>
-                <td>{{employee.dob}}</td>
+                <td>{{employee.salary | currency}}</td>
+                <!-- <td>{{employee.dob | date: 'shortDate' | uppercase}}</td> -->
+                <td>{{employee.dob | date: 'longDate' | uppercase}}</td>
                 <td>{{employee.email}}</td>
                 <td>{{employee.action}}</td>
             </tr>
