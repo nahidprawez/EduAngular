@@ -10,12 +10,22 @@
 </style>
 <div class="fg-table">
     <table>
-        <tr>
-            <th>Employee ID</th>
-            <th>Employee Name</th>
-            <th>Employee Salary </th>
-            <th>Employee  Age</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Salary </th>
+                <th>Employee  Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees"> 
+                <th>{{emp.id}}</th>
+                <th>{{emp.employee_name}}</th>
+                <th>{{emp.employee_salary}}</th>
+                <th>{{emp.employee_age}}</th>
+            </tr>
+        </tbody>
     </table>
 </div>
 

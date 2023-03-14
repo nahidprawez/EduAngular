@@ -16,6 +16,11 @@ export class NewemployeeComponent implements OnInit{
     }
 
     getEmployees(): void {
-       this.employeeService.getEmployees().subscribe(employees=> this.employees = employees)
+      console.log(this.employees, "emp")
+       this.employeeService.getEmployees().subscribe(response=> {
+        this.employees = response;
+        console.log(response, "employees")
+        console.log(this.employees, "emp")
+      })
     }
 }
