@@ -10,15 +10,19 @@ import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { ContactComponent } from './contact/contact.component';
 import { Routes, RouterModule } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 
 const routes: Routes = [
    {path : "", component : HomeComponent},
    {path : "contact", component : ContactComponent},
    {path : "products", component : ProductComponent},
-   {path : "**", component : NotFoundComponent},
-]
+   {path : "product-details/:id", component : ProductDetailsComponent},
+   {path : "not-found", component : ErrorPageComponent, data : {message : "Page Not Found!"}},
+   {path : "**", redirectTo : "/not-found", pathMatch : "full"},
+] 
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ const routes: Routes = [
     NewemployeeComponent,
     HomeComponent,
     ProductComponent,
-    ContactComponent
+    ContactComponent,
+    ErrorPageComponent,
+    ProductDetailsComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
