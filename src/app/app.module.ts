@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ColorDirective } from './directives/color.directive';
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NewemployeeComponent } from './newemployee/newemployee.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +13,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 const routes: Routes = [
@@ -35,12 +36,14 @@ const routes: Routes = [
     ContactComponent,
     ErrorPageComponent,
     ProductDetailsComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

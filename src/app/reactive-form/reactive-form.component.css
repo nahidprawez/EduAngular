@@ -1,0 +1,9 @@
+.angular-form {
+    margin-top: 70px;
+    width: 50rem;
+    padding: 20px;
+}
+
+.form-group label {
+    margin: 5px 0px;
+}
